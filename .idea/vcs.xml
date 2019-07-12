@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Drawing-Shapes" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Drawing-Shapes/Drawing-Shapes" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Grid-Colors" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/MyTaskTracker" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Sidisi-Graveyard-Counter" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/States &amp; Capitals RMI" vcs="Git" />
+  </component>
+</project>
