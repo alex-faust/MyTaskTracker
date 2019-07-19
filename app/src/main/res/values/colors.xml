@@ -5,6 +5,8 @@
     <color name="colorAccent">#82e9de</color>
     <color name="newBackground">#e0f7fa</color>
     <color name="tabTextColor">#000000</color>
+    <color name="colorButtonNavigation">#9575CD</color>
+    <color name="colorButtonNavigationBackground">#B39DDB</color>
 
   >
 </resources>

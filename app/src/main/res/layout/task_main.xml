@@ -8,22 +8,37 @@
     android:background="@color/newBackground"
     tools:context=".TaskMainActivity">
 
-    <android.support.design.widget.TabLayout
-        android:id="@+id/tablayout_id"
+    <android.support.design.widget.CoordinatorLayout
+        android:id="@+id/coordinatorLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="?attr/colorPrimary"
-        app:layout_constraintBottom_toBottomOf="@+id/viewpager_id"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:tabGravity="fill"
-        app:tabMode="fixed"
-        app:tabTextColor="@color/colorAccent"
-        app:tabSelectedTextColor="@color/tabTextColor" />
+        android:layout_height="match_parent">
 
-    <android.support.v4.view.ViewPager
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/viewpager_id" />
+
+
+        <android.support.design.widget.BottomNavigationView
+            android:id="@+id/bottomnavigation_id"
+            android:theme="@style/ButtonNavigationTheme"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:background="@color/colorButtonNavigationBackground"
+            app:menu="@menu/navigation_menu"
+            app:layout_constraintBottom_toBottomOf="@+id/coordinatorLayout"
+            tools:layout_editor_absoluteX="-27dp">
+
+
+        </android.support.design.widget.BottomNavigationView>
+
+        <android.support.v4.view.ViewPager
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/viewpager_id"
+            android:layout_below="@id/bottomnavigation_id" />
+
+    </android.support.design.widget.CoordinatorLayout>
+
+
+
+
 
 </android.support.constraint.ConstraintLayout>
