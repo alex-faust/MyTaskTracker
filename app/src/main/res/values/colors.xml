@@ -7,6 +7,9 @@
     <color name="tabTextColor">#000000</color>
     <color name="colorButtonNavigation">#9575CD</color>
     <color name="colorButtonNavigationBackground">#B39DDB</color>
+    <color name="taskPriorityLow">#9ccc65</color>
+    <color name="taskPriorityMedium">#ffca28</color>
+    <color name="taskPriorityHigh">#ef5350</color>
 
   >
 </resources>

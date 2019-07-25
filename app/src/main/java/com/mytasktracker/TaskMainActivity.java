@@ -5,7 +5,6 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.TabLayout;
 import android.support.design.widget.TextInputLayout;
-import android.support.v4.app.ActivityCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
@@ -13,16 +12,18 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-public class TaskMainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener, ViewPager.OnPageChangeListener
+public class TaskMainActivity extends AppCompatActivity
+        implements BottomNavigationView.OnNavigationItemSelectedListener,
+                   ViewPager.OnPageChangeListener
 {
     ViewPager viewPager;
-    TabLayout tabLayout;
+    //TabLayout tabLayout;
     BottomNavigationView bottomNavigationView;
     TextView txt;
     Button timeBtn, dateBtn;
-    TextInputLayout taskNameLayout;
-    EditText taskNameText;
-    Task task = new Task();
+    //TextInputLayout taskNameLayout;
+    //EditText taskNameText;
+    //Task task = new Task();
 
     protected void onCreate(Bundle b)
     {
@@ -32,7 +33,7 @@ public class TaskMainActivity extends AppCompatActivity implements BottomNavigat
         txt = findViewById(R.id.test_text);
         bottomNavigationView = findViewById(R.id.bottomnavigation_id);
         viewPager = findViewById(R.id.viewpager_id);
-        taskNameText = findViewById(R.id.taskname_text);
+        //taskNameText = findViewById(R.id.create_taskname_text);
 
         bottomNavigationView.setOnNavigationItemSelectedListener(this);
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());

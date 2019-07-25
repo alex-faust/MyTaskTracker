@@ -1,11 +1,13 @@
 package com.mytasktracker;
 
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -17,40 +19,57 @@ import java.util.List;
 public class TaskList extends Fragment
 {
     View view;
-    List<Fragment> taskLists = new ArrayList<>();
-    ListView listView;
+    public List<Task> taskLists = new ArrayList<>();
+    public List<Task> taskLists1 = new ArrayList<>();
     TextView txt;
-    final String[] tasks = new String[]{"one", "two", "three"};
+    RecyclerView recyclerView;
+    Task task = new Task();
+    Task task1;
 
 
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
+            Bundle savedInstanceState)
     {
-        view = inflater.inflate(R.layout.edit_task, container, false);
-        listView = view.findViewById(R.id.listOfTask_id);
+        view = inflater.inflate(R.layout.task_list, container, false);
         txt = view.findViewById(R.id.test_text);
+        recyclerView = view.findViewById(R.id.recyclerview_id);
 
         Bundle bundle = getArguments();
         if (bundle!= null)
         {
-            String value = getArguments().getString("taskname");
-            txt.setText(value);
+            //task = (Task) bundle.getSerializable("new task");
+            //taskLists.add(task);
+            ArrayList<Task> taskLists = (ArrayList<Task>) getArguments().getSerializable("new task");
+            txt.setText("" + taskLists.size());
+
+
+            /*for(int i = 0; i < taskLists.size(); i++)
+            {
+                task1 = new Task();
+                task1.taskName = taskLists.get(i).getTaskName();
+
+                taskLists1.add(task1);
+            }
+            taskLists1.add(task);*/
+
+            //Toast.makeText(view.getContext(), "tasklist is " + taskLists.size() + "", Toast.LENGTH_SHORT).show();
+
+            //Toast.makeText(view.getContext(), "tasklist 1 is " +  taskLists1.size() + "", Toast.LENGTH_SHORT).show();
+
+            LinearLayoutManager linearLayoutManager = new LinearLayoutManager(view.getContext());
+            recyclerView.setLayoutManager(linearLayoutManager);
+            recyclerView.setHasFixedSize(true);
+            recyclerView.setAdapter(new RecyclerAdapter(taskLists));
+
+
         }
 
-        ArrayAdapter<String> taskAdapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_list_item_1, tasks);
-        listView.setAdapter(taskAdapter);
 
-        listView.setOnItemClickListener((parent, view, position, id) -> {
-            txt.setText(tasks[position]);
-            Toast.makeText(view.getContext(), tasks[position], Toast.LENGTH_SHORT).show();
-        });
 
 
 
         return view;
     }
-    public void setText(String str)
-    {
-        str = txt.toString();
-    }
+
 
 }

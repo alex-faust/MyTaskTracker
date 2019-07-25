@@ -6,17 +6,18 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import java.util.Date;
+import java.io.Serializable;
 
-public class Task extends Fragment
+
+public class Task extends Fragment implements Serializable
 {
     View view;
     String taskName;
-    int[] days, year;
-    Date taskDate;
+    String taskDate;
+    String taskTime;
     String taskDescription;
     String taskPriority; //maybe wont leave as a string
-    String taskRecurrance;
+    String taskRecurrence;
     String taskNotification;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
@@ -32,11 +33,6 @@ public class Task extends Fragment
         super();
     }
 
-   /* public Task(String task)
-    {
-        taskName = task;
-    }*/
-
     public String getTaskName()
     {
         return this.taskName;
@@ -47,12 +43,62 @@ public class Task extends Fragment
         this.taskName = taskName;
     }
 
-   /* private String getMonth(int i)
+    public String getTaskDescription()
     {
-        return months[i];
+        return this.taskDescription;
     }
-    private int getDate(int i)
+
+    public void setTaskDescription(String taskDescription)
     {
-        return days[i];
-    }*/
+        this.taskDescription = taskDescription;
+    }
+    public String getDate()
+    {
+        return this.taskDate;
+    }
+
+    public void setDate(String taskDate)
+    {
+        this.taskDate = taskDate;
+    }
+
+    public String getTime()
+    {
+        return this.taskTime;
+    }
+
+    public void setTime(String taskTime)
+    {
+        this.taskTime = taskTime;
+    }
+
+    public String getPriority()
+    {
+        return this.taskPriority;
+    }
+
+    public void setPriority(String priorityText)
+    {
+        this.taskPriority = priorityText;
+    }
+
+    public String getTaskNotification()
+    {
+        return this.taskNotification;
+    }
+
+    public void setTaskNotification(String taskNotification)
+    {
+        this.taskNotification = taskNotification;
+    }
+    public String getTaskRecurrence()
+    {
+        return this.taskRecurrence;
+    }
+
+    public void setTaskRecurrence(String taskRecurrence)
+    {
+        this.taskRecurrence = taskRecurrence;
+    }
+
 }
